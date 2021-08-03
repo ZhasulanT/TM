@@ -15,6 +15,10 @@ const Chat = () => {
         firestore.collection('messages').orderBy('createdAt')
     )
 
+   
+   
+    
+
     const sendMessage = async () => {
         firestore.collection('messages').add({
             uid: user.uid,
@@ -39,8 +43,6 @@ const Chat = () => {
                     {messages.map(message =>
                         <div style={{
                             margin: 10,
-                            border: user.uid === message.uid ? '2px solid green' : '2px dashed red',
-                            marginLeft: user.uid === message.uid ? 'auto' : '10px',
                             width: 'fit-content',
                             padding: 5,
                         }}>
@@ -65,7 +67,7 @@ const Chat = () => {
                         value={value}
                         onChange={e => setValue(e.target.value)}
                     />
-                    <Button onClick={sendMessage} variant={"outlined"}>Отправить</Button>
+                    {user ? <Button onClick={sendMessage} variant={"outlined"}>Отправить</Button> : <p>Чтобы оставить комментарий необходимо авторизоваться</p>}
                 </Grid>
             </Grid>
         </Container>

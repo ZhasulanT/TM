@@ -3,15 +3,22 @@ import {Button, Container, Grid} from "@material-ui/core";
 import Box from "@material-ui/core/Box";
 import {Context} from "../index";
 import firebase from "firebase";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link, Redirect } from 'react-router-dom';
 
 
 const Login = () => {
     const {auth} = useContext(Context)
+    const [userAuth] = useAuthState(auth)
 
     const login = async () => {
         const provider = new firebase.auth.GoogleAuthProvider()
         const {user} = await auth.signInWithPopup(provider)
-        console.log(user)
+        
+    }
+
+    if (userAuth) {
+       return <Redirect to="/" />
     }
 
     return (
