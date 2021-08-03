@@ -2,7 +2,7 @@ import React from 'react';
 import '../../App.css';
 import img from '../../assets/images/44.jpg'
 import Chat from '../Chat';
-import Footer from '../Footer';
+
 
 
 export default function Products() {
@@ -20,7 +20,7 @@ export default function Products() {
         
     </div>
     <Chat />
-    <Footer />
+   
     </>
   )
 }
