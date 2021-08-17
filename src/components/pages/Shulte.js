@@ -16,13 +16,16 @@ export default function Shulte() {
 
   
   useEffect(() => {
+  
     if (timerActive) {
-      setTimeout(setSecond, 1000, second + 1);
+       setTimeout(setSecond, 100, second + 10);
     } else {
-      setTimerActive(false);
+     
+      setTimerActive(false)
+     
       
     }
-  }, [ second, timerActive]);
+  }, [second, timerActive]);
 
   
  
@@ -41,11 +44,12 @@ export default function Shulte() {
   setSecond(0)
   setText('')
   
+  
 }
 
 const finish = () => {
   setRandomNumbers(Array(25).fill(null))
-  setText(`ваш результат ${second} секунд`)
+  setText(`ваш результат ${second / 100} секунд`)
  setTimerActive(false)
 }
 
@@ -60,10 +64,7 @@ const checkNumber = () => {
   return (
     <div className="container">
       <h1>Тест Шульте</h1>
-      <p>Таблица со случайно расположенными числами, служащие для проверки и развития быстроты нахождения этих объектов в определённом порядке.</p>
      
-      
-      
       <div className="game">
         <div className="game-board">
         <div className="game-play">
@@ -107,7 +108,7 @@ const checkNumber = () => {
           </div>
           </div>
        {timerActive ? <React.Fragment>
-            <p>{second}</p>
+            <p>{second / 100}</p>
             <button type="button" onClick={stop} className="btn btn-success btn-lg">Стоп</button>  
           </React.Fragment> : <React.Fragment><p>{text}</p><button type="button" onClick={start} className="btn btn-success btn-lg">Начать тест</button></React.Fragment>}
        
@@ -131,7 +132,7 @@ const Square = (props) => {
 
 
   const check = () => {
-    if (counter === props.value && counter !== 25) {
+    if (counter === props.value && counter !== 3) {
       props.checkNumber(props.value);
       setStyle("square success")
     }
