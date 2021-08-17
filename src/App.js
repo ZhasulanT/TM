@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Services from './components/pages/Services';
 import Products from './components/pages/Products';
 import Login from './components/Login';
+import Shulte from './components/pages/Shulte';
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
           <Route path='/TM' exact component={Home} />
           <Route path='/services' component={Services} />
           <Route path='/products' component={Products} />
-        
+          <Route path='/shulte' component={Shulte} />
           <Route path='/login' component={Login} />
         </Switch>
       </Router>

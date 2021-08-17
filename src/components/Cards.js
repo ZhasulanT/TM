@@ -17,6 +17,13 @@ function Cards() {
               label='31.07.2021'
               path='/products'
             />
+
+              <CardItem
+              src={shulteImg}
+              text='Тест Шульте'
+              label='11.08.2021'
+              path='/shulte'
+            />
            
           </ul>
          

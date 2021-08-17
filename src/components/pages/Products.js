@@ -7,6 +7,7 @@ import Chat from '../Chat';
 
 export default function Products() {
   
+  
   return (
     <>
     <div className="container productsBlock">
