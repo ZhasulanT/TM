@@ -4,12 +4,12 @@ import './Shulte.css';
 
 export default function Shulte() {
 
-  const [randomNumbers, setRandomNumbers] = useState(Array(25).fill(null))
+  const [randomNumbers, setRandomNumbers] = useState(Array(25).fill(""))
   const [second, setSecond] = useState(0)
   const [timerActive, setTimerActive ] = useState(false);
   const [counter, setCounter] = useState(1);
-  const [text, setText] = useState('');
- 
+  const [text, setText] = useState('0');
+  const g = " <= ";
   const renderSquare = (i) => {
     return <Square value={i} counter={counter} finish={finish} checkNumber={checkNumber} />
   }
@@ -35,20 +35,20 @@ export default function Shulte() {
     setTimerActive(true)
     setSecond(0)
     setCounter(1)
-    setText('')
+    
  }
 
  const stop = () => {
   setTimerActive(false)
-  setRandomNumbers(Array(25).fill(null))
+  setRandomNumbers(Array(25).fill(""))
   setSecond(0)
-  setText('')
+  setText('0')
   
   
 }
 
 const finish = () => {
-  setRandomNumbers(Array(25).fill(null))
+  setRandomNumbers(Array(25).fill(""))
   setText(`ваш результат ${second / 100} секунд`)
  setTimerActive(false)
 }
@@ -63,7 +63,8 @@ const checkNumber = () => {
   
   return (
     <div className="container">
-      <h1>Тест Шульте</h1>
+      <h4>Тест Шульте</h4>
+      <p className="k">35с.{g}отлично, 42с.{g} хорошо, 60с.{g} удов.</p>
      
       <div className="game">
         <div className="game-board">
@@ -109,7 +110,7 @@ const checkNumber = () => {
           </div>
        {timerActive ? <React.Fragment>
             <p>{second / 100}</p>
-            <button type="button" onClick={stop} className="btn btn-success btn-lg">Стоп</button>  
+            <button type="button" onClick={stop} id="j" className="btn btn-success btn-lg">Стоп</button>  
           </React.Fragment> : <React.Fragment><p>{text}</p><button type="button" onClick={start} className="btn btn-success btn-lg">Начать тест</button></React.Fragment>}
        
       
@@ -132,7 +133,7 @@ const Square = (props) => {
 
 
   const check = () => {
-    if (counter === props.value && counter !== 3) {
+    if (counter === props.value && counter !== 25) {
       props.checkNumber(props.value);
       setStyle("square success")
     }

@@ -8,6 +8,22 @@
     margin-top: 1em;
 }
 
+.container h4 {
+  text-align: center;
+}
+
+.container p {
+  color: red;
+}
+
+#j {
+  padding-left: 2.35em;
+  padding-right: 2.35em;
+}
+
+.k {
+  text-align: center;
+}
 
   
   ol, ul {
@@ -26,13 +42,16 @@
 
     font-size: 50px;
     font-weight: bold;
-
+ 
     height: 7rem;
-    padding: 0;
+    padding: 0.29em;
     text-align: center;
     width: 7rem;
+    
+    
   }
 
+ 
   .error:focus{background-color:red;}
   .success:focus{background-color:green;}
 
@@ -40,6 +59,8 @@
       margin-left: 0.1em;
       margin-bottom: 2em;
   }
+
+ 
   
   .square:focus {
     outline: none;
