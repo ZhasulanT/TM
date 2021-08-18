@@ -128,7 +128,7 @@ const Square = (props) => {
 
 
   useEffect(() => {
-    setTimeout(setStyle, 350, "square")
+    setTimeout(setStyle, 200, "square")
   }, [style]); 
 
 
